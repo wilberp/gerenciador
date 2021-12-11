@@ -25,6 +25,7 @@ public class CategoriasController {
     }
 
     @GetMapping("/{id}")
+    @ApiOperation(value = "Lista categoria por Id.")
     public ResponseEntity<?> buscaCategoriaPorId(@PathVariable Integer id)  {
         Categoria retornoCategoria = categoriaService.buscaCategoriaPorId(id);
         if (retornoCategoria != null){
@@ -35,11 +36,13 @@ public class CategoriasController {
     }
 
     @GetMapping
+    @ApiOperation(value = "Lista todas categorias.")
     public ResponseEntity<List<Categoria>> todasCategorias(){
         return ResponseEntity.ok(categoriaService.buscaCategorias());
     }
 
     @PostMapping
+    @ApiOperation(value = "Salva categoria.")
     public ResponseEntity<Categoria> salvaCategoria(@RequestBody Categoria categoria)  {
         Categoria retornoCategoria = categoriaService.salvaCategoria(categoria);
 
@@ -53,6 +56,7 @@ public class CategoriasController {
     }
 
     @PutMapping
+    @ApiOperation(value = "Altera categoria.")
     public ResponseEntity<Categoria> alteraCategoria(@RequestBody Categoria categoria)  {
         Categoria retContato = categoriaService.alteraCategoria(categoria);
 
@@ -64,6 +68,7 @@ public class CategoriasController {
     }
 
     @DeleteMapping("/{id}")
+    @ApiOperation(value = "Deleta categoria por Id.")
     public ResponseEntity<CategoriaDTO> deletaCategoria(@PathVariable Integer id)  {
         categoriaService.deletaCategoria(id);
         return ResponseEntity.noContent().build();

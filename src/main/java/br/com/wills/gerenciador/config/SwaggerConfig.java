@@ -28,7 +28,6 @@ public class SwaggerConfig {
     }
 
     public ApiInfo getApinfo(){
-       return new ApiInfo("Gerenciador Financeiro", "Crud Gerenciador Financeiro", "1.0" ,null,null, null,null, Collections.emptyList());
-    }
+       return new ApiInfo("Gerenciador Financeiro", "Gerenciador Financeiro Pessoal desenvolvido para controle de receita e despesas.", "1.0" ,null,null, null,null, Collections.emptyList());    }
 
 }
