@@ -1,6 +1,6 @@
 package br.com.wills.gerenciador.service;
 
-import br.com.wills.gerenciador.dto.BalancoDTO;
+import br.com.wills.gerenciador.dto.BalancoFinalDTO;
 import br.com.wills.gerenciador.model.Lancamento;
 import br.com.wills.gerenciador.model.RelatorioGastos;
 
@@ -14,6 +14,6 @@ public interface LancamentoService {
     Lancamento alteraLancamento(Lancamento lancamento);
     void deletaLancamento (Integer id);
     List<Lancamento> relatorioGastos(RelatorioGastos relatorioGastos);
-    BalancoDTO relatorioBalanco(LocalDate data);
+    BalancoFinalDTO relatorioBalanco(LocalDate data);
 
     }

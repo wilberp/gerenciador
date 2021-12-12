@@ -15,11 +15,11 @@ public class Categoria {
     private BigDecimal limiteMensal = BigDecimal.ZERO;
 
 
-    public Categoria(String nome) {
-        this.nome = nome;
-    }
+//  // public Categoria(String nome) {
+//        this.nome = nome;
+//    }
 
-    protected Categoria() {
+    public Categoria() {
     }
 
     public Integer getId() {
@@ -31,4 +31,8 @@ public class Categoria {
     }
 
     public BigDecimal getLimiteMensal() { return limiteMensal; }
+
+    public void setId(Integer id) {
+        this.id = id;
+    }
 }

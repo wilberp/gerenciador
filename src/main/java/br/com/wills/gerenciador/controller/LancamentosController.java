@@ -1,12 +1,8 @@
 package br.com.wills.gerenciador.controller;
 
-import br.com.wills.gerenciador.dto.BalancoDTO;
-import br.com.wills.gerenciador.dto.CategoriaDTO;
-import br.com.wills.gerenciador.dto.LancamentoDTO;
-import br.com.wills.gerenciador.model.Categoria;
+import br.com.wills.gerenciador.dto.BalancoFinalDTO;
 import br.com.wills.gerenciador.model.Lancamento;
 import br.com.wills.gerenciador.model.RelatorioGastos;
-import br.com.wills.gerenciador.repository.LancamentoRepository;
 import br.com.wills.gerenciador.service.LancamentoService;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -14,6 +10,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.util.UriComponentsBuilder;
 
+import javax.persistence.EntityNotFoundException;
 import java.net.URI;
 import java.time.LocalDate;
 import java.util.List;
@@ -49,7 +46,7 @@ public class LancamentosController {
 
             return ResponseEntity.created(uri).body(retornoLancamento);
         } else {
-            return ResponseEntity.noContent().build();
+           throw new EntityNotFoundException("Limite excedido no limite maximo");
         }
     }
 
@@ -83,7 +80,7 @@ public class LancamentosController {
 
     @GetMapping("/balanco")
     @ApiOperation(value = "Exibe balanco de entradas e saidas.")
-    public ResponseEntity<BalancoDTO> relatorioBalanco(@RequestParam LocalDate data) {
+    public ResponseEntity<BalancoFinalDTO> relatorioBalanco(@RequestParam LocalDate data) {
 
             return ResponseEntity.ok(lancamentoService.relatorioBalanco(data));
     }
