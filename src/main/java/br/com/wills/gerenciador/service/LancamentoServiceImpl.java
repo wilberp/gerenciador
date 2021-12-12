@@ -3,11 +3,9 @@ package br.com.wills.gerenciador.service;
 import br.com.wills.gerenciador.dto.BalancoFinalDTO;
 import br.com.wills.gerenciador.model.Categoria;
 import br.com.wills.gerenciador.model.Lancamento;
-import br.com.wills.gerenciador.model.RelatorioBalanco;
 import br.com.wills.gerenciador.model.RelatorioGastos;
 import br.com.wills.gerenciador.repository.CategoriaRepository;
 import br.com.wills.gerenciador.repository.LancamentoRepository;
-import br.com.wills.gerenciador.repository.LancamentoSpecification;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 
@@ -16,8 +14,6 @@ import java.math.BigDecimal;
 import java.time.LocalDate;
 import java.time.Month;
 import java.util.List;
-
-import static org.springframework.data.jpa.domain.Specification.where;
 
 @Service
 @Slf4j
@@ -43,14 +39,6 @@ public class LancamentoServiceImpl implements LancamentoService {
     public List<Lancamento> buscaLancamentos() {
         return lancamentoRepository.findAll();
     }
-
-//    private boolean verificaCategoriaLazer200() {
-//        LocalDate data = LocalDate.now();
-//        List<Lancamento> retorno = lancamentoRepository.findAll(where(LancamentoSpecification.categoriaLazer())
-//                .and(LancamentoSpecification.dataMes(data)));
-//
-//        return retorno.size() == 0 ? false : true;
-//    }
 
     private BigDecimal verificaCategoriaAtingiuValor(Integer idCategoria) {
 

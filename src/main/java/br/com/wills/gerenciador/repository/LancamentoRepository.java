@@ -12,7 +12,7 @@ import org.springframework.data.repository.query.Param;
 import java.time.LocalDate;
 import java.util.List;
 
-public interface LancamentoRepository extends JpaRepository<Lancamento,  Integer>, JpaSpecificationExecutor<Lancamento> {
+public interface LancamentoRepository extends JpaRepository<Lancamento,  Integer> {
 
     List<Lancamento> findBydataCriacaoBetweenAndCategoria(LocalDate dataAnterior, LocalDate dataAtual, Categoria categoria);
 
