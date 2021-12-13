@@ -79,7 +79,7 @@ public class LancamentosController {
     }
 
     @GetMapping("/balanco")
-    @ApiOperation(value = "Exibe balanco de entradas e saidas.")
+    @ApiOperation(value = "Exibe balanco de entradas e saidas. Inserir uma data váida, porem valida pelo mês")
     public ResponseEntity<BalancoFinalDTO> relatorioBalanco(@RequestParam LocalDate data) {
 
             return ResponseEntity.ok(lancamentoService.relatorioBalanco(data));
