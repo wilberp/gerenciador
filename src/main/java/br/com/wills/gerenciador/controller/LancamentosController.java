@@ -37,7 +37,7 @@ public class LancamentosController {
         return ResponseEntity.ok(lancamentoService.buscaLancamentos());
     }
 
-    @PostMapping
+    @PostMapping()
     @ApiOperation(value = "Salva lançamento.")
     public ResponseEntity<Lancamento> salvaLancamento(@RequestBody Lancamento lancamento) {
         Lancamento retornoLancamento = lancamentoService.salvaLancamento(lancamento);

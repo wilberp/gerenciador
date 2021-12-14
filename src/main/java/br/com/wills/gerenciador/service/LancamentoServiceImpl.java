@@ -18,7 +18,6 @@ import java.util.List;
 @Service
 @Slf4j
 public class LancamentoServiceImpl implements LancamentoService {
-    private final Integer CATEGORIALAZER = 3;
 
     private final LancamentoRepository lancamentoRepository;
     private final CategoriaRepository categoriaRepository;

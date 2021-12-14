@@ -15,9 +15,10 @@ public class Categoria {
     private BigDecimal limiteMensal = BigDecimal.ZERO;
 
 
-//  // public Categoria(String nome) {
-//        this.nome = nome;
-//    }
+   public Categoria(String nome, BigDecimal limiteMensal) {
+        this.nome = nome;
+        this.limiteMensal = limiteMensal;
+    }
 
     public Categoria() {
     }
