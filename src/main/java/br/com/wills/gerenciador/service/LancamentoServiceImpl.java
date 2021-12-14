@@ -123,7 +123,7 @@ public class LancamentoServiceImpl implements LancamentoService {
         List<Lancamento> retorno;
 
         LocalDate data = LocalDate.now();
-        String filtro = relatorioGastos.getFiltroData();
+        String filtro = relatorioGastos.getFiltroData().toString();
 
         switch (filtro) {
             case "D":

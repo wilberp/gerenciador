@@ -1,6 +1,7 @@
 package br.com.wills.gerenciador.controller;
 
 import br.com.wills.gerenciador.dto.BalancoFinalDTO;
+import br.com.wills.gerenciador.model.EnumRelatorioFiltro;
 import br.com.wills.gerenciador.model.Lancamento;
 import br.com.wills.gerenciador.model.RelatorioGastos;
 import br.com.wills.gerenciador.service.LancamentoService;
@@ -71,10 +72,10 @@ public class LancamentosController {
 
     @GetMapping("/relgastos")
     @ApiOperation(value = "Exibe relatorio de gastos por filtro - (D)ia / (M)es / (S)emana / (C)ategoria.")
-    public ResponseEntity<List<Lancamento>> relatorioGastos(@RequestParam Integer categoriaId, @RequestParam String filtroData) {
+    public ResponseEntity<List<Lancamento>> relatorioGastos(@RequestParam Integer categoriaId, @RequestParam EnumRelatorioFiltro filtroData) {
         RelatorioGastos relatorioGastos = new RelatorioGastos();
         relatorioGastos.setCategoriaId(categoriaId);
-        relatorioGastos.setFiltroData(filtroData.toUpperCase());
+        relatorioGastos.setFiltroData(filtroData);
         return ResponseEntity.ok(lancamentoService.relatorioGastos(relatorioGastos));
     }
 

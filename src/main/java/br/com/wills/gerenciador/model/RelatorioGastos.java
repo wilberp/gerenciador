@@ -1,18 +1,22 @@
 package br.com.wills.gerenciador.model;
 
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
+
 public class RelatorioGastos {
     private Integer categoriaId;
-    private String filtroData;
+    @Enumerated(EnumType.STRING)
+    private EnumRelatorioFiltro filtroData;
 
     public Integer getCategoriaId() {
         return categoriaId;
     }
 
-    public String getFiltroData() {
+    public EnumRelatorioFiltro getFiltroData() {
         return filtroData;
     }
 
     public void setCategoriaId(Integer categoriaId) {this.categoriaId = categoriaId; }
 
-    public void setFiltroData(String filtroData) {this.filtroData = filtroData; }
+    public void setFiltroData(EnumRelatorioFiltro filtroData) {this.filtroData = filtroData; }
 }
